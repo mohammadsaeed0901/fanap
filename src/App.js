@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/UI/Navbar";
-import Dashboard from "./components/Dashboard";
-import Servers from "./components/Servers";
-import Server from "./components/Server";
-import CreateServer from "./components/Create-server";
+import Navbar from "./UI/Navbar";
+import Dashboard from "./pages/Dashboard";
+import Servers from "./pages/Servers";
+import Server from "./pages/Server";
+import CreateServer from "./pages/Create-Server";
 
 function App(props) {
   return (
