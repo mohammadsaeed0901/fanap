@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    font-size: 1.3rem;
+    background-color: yellowgreen;
+    color: #000;
+    width: max-content;
+    margin: 1rem auto;
+
+    &--list {
+        list-style-type: none;
+        padding: 1.5rem;
+    }
+
+    &--item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
+    }
+
+    &--link {
+        text-decoration: none;
+        color: currentColor;
+    }
+}

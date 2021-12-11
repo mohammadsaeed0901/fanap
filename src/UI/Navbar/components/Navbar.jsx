@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.scss";
+import "../styles.scss";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -7,18 +7,14 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="navbar--list">
         <li className="navbar--item">
+         <img src="https://picsum.photos/id/1005/50" alt="user profile" className="navbar--img"/>
+        </li>
+        <li className="navbar--item">
+          <p>User</p>
+        </li>
+        <li className="navbar--item" style={{marginLeft: "auto"}}>
           <Link className="navbar--link" to="/dashboard">
-            Dashboard
-          </Link>
-        </li>
-        <li className="navbar--item">
-          <Link className="navbar--link" to="/servers">
-            Servers
-          </Link>
-        </li>
-        <li className="navbar--item">
-          <Link className="navbar--link" to="/create-server">
-            Create Server
+            Login
           </Link>
         </li>
       </ul>

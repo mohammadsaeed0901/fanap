@@ -9,18 +9,23 @@
     background-color: #1e123d;
     color: #fff;
 
-
     &--list {
         list-style-type: none;
-        padding: 1.5rem;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
     }
 
     &--item {
         display: inline-block;
 
-        &:not(:last-child) {
-            margin-right: 2rem;
+        &:nth-child(2) {
+            margin-left: 2rem;
         }
+    }
+
+    &--img {
+        border-radius: 50%;
     }
 
     &--link {
