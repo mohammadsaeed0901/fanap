@@ -19,6 +19,15 @@ const useStyles = makeStyles(theme => ({
     listStyle: {
         display: "block",
     },
+    tableStyle: {
+        margin: "100px auto",
+        maxWidth: "1000px"
+    },
+    rowStyle: {
+        color: "blueviolet",
+    },
+    overwrite: {}
+
 }));
 
 export default useStyles;
