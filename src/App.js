@@ -7,24 +7,13 @@ import Servers from "./Pages/Servers";
 import Server from "./Pages/Server";
 import CreateServer from "./Pages/Create-Server";
 import Logout from "./Pages/Logout";
-import Login from "./Pages/Login";
 import GuardRoute from "./Routes/GuardRoute";
+import Index from "./Routes";
 
-function App(props) {
+function App() {
   return (
     <React.Fragment>
-      
-      <Router>
-      <Menu />
-      <Header/>
-        <Routes>
-          <Route exact path="/dashboard" element={<Dashboard />} />
-          <Route exact path="/servers/:id" element={<Server />} />
-          <Route exact path="/servers" element={<Servers />} />
-          <Route exact path="/create-server" element={<CreateServer />} />
-          <Route exact path="/" element={<Login/>}/>
-        </Routes>
-      </Router>
+        <Index />
     </React.Fragment>
   );
 }

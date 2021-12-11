@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes } from 'react-router-dom';
-import GuardRoute from './GuardRoute';
-import LoginRoute from './LoginRoute';
+import { BrowserRouter as Router, Routes , Route} from 'react-router-dom';
+// import GuardRoute from './GuardRoute';
+// import LoginRoute from './LoginRoute';
 //Pages
-import Main from '../Pages/Login';
+import Main from '../Main';
 import CreateServer from "../Pages/Create-Server";
 import Servers from "../Pages/Servers";
 import Server from "../Pages/Server";
@@ -19,15 +19,25 @@ import Dashboard from "../Pages/Dashboard";
 // import DefaultQuotaComponent from '../Pages/DefaultQuota';
 // import PlanViewComponent from '../Pages/PlanView';
 
-const Index: React.FunctionComponent<{}> = () => {
+
+// interface IProps {
+//     path: string[];
+//     exact: boolean;
+//     footer?: boolean;
+//     header?: boolean;
+//     sidebar?: boolean;
+// }
+
+const Index = () => {
   return (
     <Router>
+        <Main/>
       <Routes>
-          <GuardRoute exact path={['/dashboard']} component={Dashboard} />
-          <GuardRoute exact path={['/createserver']} component={CreateServer} />
-          <GuardRoute exact path={['/servers']} component={Servers} />
-          <GuardRoute exact path={['/servers/:id']} component={Server} />
-          <LoginRoute path={['/']} component={Main} />
+          <Route exact path='/dashboard' element={<Dashboard/>} />
+          <Route exact path='/create-server' element={<CreateServer/>} />
+          <Route exact path='/servers' element={<Servers/>} />
+          <Route exact path='/servers/:id' element={<Server/>} />
+          <Route exact path='/' />
         {/*<GuardRoute exact={true} path={['/', '/service-reports']} component={ReportsComponent} />*/}
         {/*<GuardRoute exact path={['/server-plans']} component={ServerPlans} />*/}
         {/*<GuardRoute exact path={['/server-plans/new-server-plan']} component={NewServerPlan} />*/}
@@ -37,7 +47,7 @@ const Index: React.FunctionComponent<{}> = () => {
         {/*<GuardRoute exact path={['/service-groups/:id/services/:id/actions']} component={ServiceJenkinsActions} />*/}
         {/*<GuardRoute exact path={['/service-groups/:id/services/:id/plans']} component={ServiceResourcePlans} />*/}
         {/*<GuardRoute exact path={['/service-groups/:id/services/:id/reports']} component={ServiceReports} />*/}
-        <GuardRoute exact path={['*']} component={NotFoundComponent} />
+        <Route exact path='*' element={<NotFoundComponent/>} />
       </Routes>
     </Router>
   );
