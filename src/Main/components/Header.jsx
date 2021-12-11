@@ -2,7 +2,7 @@ import React from "react";
 import "../styles.scss";
 import { Link } from "react-router-dom";
 
-const MainRoutes = () => {
+const Header = () => {
   return (
     <header className="header">
       <ul className="header--list">
@@ -26,4 +26,4 @@ const MainRoutes = () => {
   );
 };
 
-export default MainRoutes;
+export default Header;

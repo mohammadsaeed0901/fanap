@@ -3,6 +3,10 @@ import "../styles.scss";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  let isAuth = localStorage.getItem('isAuth');
+  console.log(isAuth);
+
+
   return (
     <nav className="navbar">
       <ul className="navbar--list">
@@ -13,9 +17,14 @@ const Navbar = () => {
           <p>User</p>
         </li>
         <li className="navbar--item" style={{marginLeft: "auto"}}>
-          <Link className="navbar--link" to="/dashboard">
-            Login
-          </Link>
+          {isAuth === true ? (
+              <Link className="navbar--link" to="/">
+                Logout
+              </Link>) : (
+              <Link className="navbar--link" to="/dashboard">
+                Login
+              </Link>)
+          }
         </li>
       </ul>
     </nav>

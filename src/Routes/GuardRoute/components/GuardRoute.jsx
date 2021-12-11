@@ -1,10 +1,18 @@
 import React from "react";
-import {Route , Redirect} from "react-router-dom";
+import {Route , Navigate} from "react-router-dom";
 
-const GuardRoute = () => {
+const GuardRoute = ({ component: Component, ...restOfProps}) => {
     const isAuth = localStorage.getItem('isAuth');
+    console.log(isAuth);
 
-    return(<Route />);
+    return(
+    <React.Fragment>
+        <Route {...restOfProps}
+                  render={(props) =>
+                      isAuth ? <Component {...props} /> : <Navigate to="/" />
+                  }
+        />
+    </React.Fragment>);
 };
 
 export default GuardRoute;
