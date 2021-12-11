@@ -2,7 +2,7 @@ import React from "react";
 import "../styles.scss";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Menu = () => {
   let isAuth = localStorage.getItem('isAuth');
   console.log(isAuth);
 
@@ -31,4 +31,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Menu;

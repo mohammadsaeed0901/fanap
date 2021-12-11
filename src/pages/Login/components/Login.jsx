@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import "../styles.scss";
 
-const Login = () => {
+const Main = () => {
     const pass = useRef(null);
     const [err , setErr] = useState('');
 
@@ -34,4 +34,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Main;

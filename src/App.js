@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Main/components/Navbar";
+import Menu from "./Main/components/Menu";
 import Header from "./Main/components/Header";
-import Dashboard from "./pages/Dashboard";
-import Servers from "./pages/Servers";
-import Server from "./pages/Server";
-import CreateServer from "./pages/Create-Server";
-import Logout from "./pages/Logout";
-import Login from "./pages/Login";
+import Dashboard from "./Pages/Dashboard";
+import Servers from "./Pages/Servers";
+import Server from "./Pages/Server";
+import CreateServer from "./Pages/Create-Server";
+import Logout from "./Pages/Logout";
+import Login from "./Pages/Login";
 import GuardRoute from "./Routes/GuardRoute";
 
 function App(props) {
@@ -15,10 +15,10 @@ function App(props) {
     <React.Fragment>
       
       <Router>
-      <Navbar />
+      <Menu />
       <Header/>
         <Routes>
-          <GuardRoute exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/servers/:id" element={<Server />} />
           <Route exact path="/servers" element={<Servers />} />
           <Route exact path="/create-server" element={<CreateServer />} />
