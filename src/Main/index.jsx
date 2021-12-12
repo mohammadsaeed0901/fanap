@@ -9,6 +9,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import useStyles from "../Themes/DefaultTheme";
 
 function createData(name, category, compatible, number, version) {
@@ -32,6 +35,12 @@ const Main = () => {
         <>
             <Header />
             <Menu />
+            <Stack direction="row" spacing={"70%"} className={classes.stackStyle}>
+                <Button variant="contained">Contained</Button>
+                <Typography variant="h5" gutterBottom component="div">
+                    h5. Heading
+                </Typography>
+            </Stack>
             <TableContainer component={Paper}>
                 <Table className={classes.tableStyle} aria-label="server table">
                     <TableHead>

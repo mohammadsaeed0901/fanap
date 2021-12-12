@@ -26,7 +26,9 @@ const useStyles = makeStyles(theme => ({
     rowStyle: {
         color: "blueviolet",
     },
-    overwrite: {}
+    stackStyle: {
+        margin: "20px 30px",
+    },
 
 }));
 
