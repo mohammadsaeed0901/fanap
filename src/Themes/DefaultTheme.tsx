@@ -1,7 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 
+const drawerWidth = 300;
+
 const useStyles = makeStyles(theme => ({
+    root: {
+        fontFamily: "Courier New",
+    },
     headerbar: {
       backgroundColor: "darkviolet",
     },
@@ -10,7 +15,10 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
-        color: "#000",
+        color: "#FFF",
+    },
+    headStyle: {
+        color: "red",
     },
     sidebar: {
         position: "static",
@@ -19,17 +27,60 @@ const useStyles = makeStyles(theme => ({
     listStyle: {
         display: "block",
     },
-    tableStyle: {
-        margin: "100px auto",
-        maxWidth: "1000px"
+    boxStyle: {
+        height: "100vh",
+        marginTop: "80px",
+        marginRight: `${drawerWidth}px`,
+        padding: "20px",
     },
-    rowStyle: {
-        color: "blueviolet",
+    tableStyle: {
+        width: "100%",
+        border: "1px solid grey",
+        borderRadius: "3px",
+        marginTop: "50px",
+        boxShadow: "0 4px 8px rgba(0,0,0,.8)",
     },
     stackStyle: {
-        margin: "20px 30px",
+        margin: "30px 0 0 30px",
     },
-
+    buttonStyle: {
+        width: "max-content",
+        
+        padding: "10px 15px",
+    },
+    optionStyle: {
+        padding: "15px 20px",
+        '& input': {
+            height: "20px",
+        },
+    },
+    overrides: {
+        MuiTableCell: {
+            root: {
+                color: "blueviolet",
+            },
+        },
+        MuiButton: {
+            backgroundColor: "yellowgreen",
+            root: {
+                padding: "2px 10px",
+                
+            },
+        },
+        '& MuiAppBar': {
+            colorPrimary: {
+                backgroundColor: "red",
+            },
+        },
+    },
+    '@media (max-width: 960px)': {
+        root: {
+            
+        },
+        buttonStyle: {
+            width: "100%",
+        },
+    },
 }));
 
 export default useStyles;
