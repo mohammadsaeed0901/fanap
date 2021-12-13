@@ -20,7 +20,7 @@ const serverFilters = [
     "Virtual servers",
     "Proxy servers",
     "Print servers",
-  ];
+];
 
 const Index = () => {
     return <ServerTable rows={rows} serverFilter={serverFilters}/>;

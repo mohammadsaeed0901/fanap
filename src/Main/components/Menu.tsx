@@ -1,5 +1,5 @@
 import React from "react";
-import useStyles from "../../Themes/DefaultTheme";
+import { Link } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -13,13 +13,13 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import CreateIcon from "@mui/icons-material/Create";
 import StorageIcon from "@mui/icons-material/Storage";
-import { Link } from "react-router-dom";
+import useStyles from "../styles";
 
 const drawerWidth = 300;
 
-const Menu = (props) => {
-  const classes = useStyles();
+const Menu = (props:any) => {
 
+  const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -40,18 +40,22 @@ const Menu = (props) => {
       anchor="right"
     >
       <Toolbar />
-      <List>
+      <List className={classes.listStyle}>
         <ListItem button>
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
-          <ListItemText primary={"Dashboard"} />
+          <Link to="/dashboard" style={{textDecoration: "none" , color: "currentcolor"}}>
+            <ListItemText primary={"Dashboard"} />
+          </Link>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <CreateIcon />
           </ListItemIcon>
-          <ListItemText primary={"Create Server"} />
+          <Link to="/create-server" style={{textDecoration: "none" , color: "currentcolor"}}>
+            <ListItemText primary={"Create Server"} />
+          </Link>
         </ListItem>
         <ListItem button onClick={handleClick}>
           <ListItemIcon>
@@ -63,7 +67,7 @@ const Menu = (props) => {
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItem sx={{ pl: 4, display: "block" }}>
-              {props.servers.map((server) => {
+              {props.servers.map((server:string) => {
                 return <ListItem button>{server}</ListItem>;
               })}
             </ListItem>
