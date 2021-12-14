@@ -28,14 +28,7 @@ const Menu = (props:any) => {
 
   return (
     <Drawer
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: drawerWidth,
-          boxSizing: "border-box",
-        },
-      }}
+      className={classes.drawerStyle}
       variant="permanent"
       anchor="right"
     >
@@ -61,8 +54,10 @@ const Menu = (props:any) => {
           <ListItemIcon>
             <StorageIcon />
           </ListItemIcon>
-          <ListItemText primary={"Servers"} />
-          {open ? <ExpandLess /> : <ExpandMore />}
+          <Link to="/servers" style={{textDecoration: "none" , color: "currentcolor"}}>
+            <ListItemText primary={"Servers"} />
+          </Link>
+          {open ? <ExpandLess className={classes.expandStyle}/> : <ExpandMore className={classes.expandStyle}/>}
         </ListItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>

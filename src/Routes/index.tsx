@@ -7,6 +7,7 @@ import SigninComponent from '../pages/Login';
 import createServer from "../pages/Create-Server";
 import NotFoundComponent from "../pages/NotFound";
 import Dashboard from "../pages/Dashboard";
+import Servers from "../pages/Servers";
 
 const Index: React.FunctionComponent<{}> = () => {
   return (
@@ -15,6 +16,7 @@ const Index: React.FunctionComponent<{}> = () => {
         <LoginRoute path={['/oauth']} component={SigninComponent} />
         <GuardRoute exact={true} path={['/', '/create-server']} component={createServer} />
         <GuardRoute exact path={['/dashboard']} component={Dashboard} />
+          <GuardRoute exact path={['/servers']} component={Servers} />
         {/*<GuardRoute exact path={['/server-plans']} component={ServerPlans} />*/}
         {/*<GuardRoute exact path={['/server-plans/new-server-plan']} component={NewServerPlan} />*/}
         {/*<GuardRoute exact path={['/server-plan/:id']} component={PlanViewComponent} />*/}

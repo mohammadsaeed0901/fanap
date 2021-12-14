@@ -1,15 +1,19 @@
 import ServerTable from "./components/ServerTable";
 
-function createData(name:string, category:string, compatible:number, number:number, version:number) {
-  return { name, category, compatible, number, version };
+interface Data {
+    name: string;
+    category: string;
+    compatible: number;
+    number: number;
+    version: number;
 }
 
-const rows = [
-  createData("Apache web server", "web server", 10, 4, 16.0),
-  createData("Apache Tomcat", "web server", 8.1, 6, 8.05),
-  createData("Nginx", "web server", 8, 12, 14.46),
-  createData("Oracle Web Tier", "web server", 10, 3, 21),
-  createData("Abyss web server", "web server", 11, 8, 22),
+const originalRows: Data[] = [
+    {name:"Apache web server", category:"web server", compatible:10, number:4, version:16.0},
+    {name:"Apache Tomcat", category:"web server", compatible:8.1, number:6, version:8.05},
+    {name:"Nginx", category:"web server", compatible:8, number:12, version:14.46},
+    {name:"Oracle Web Tier", category:"web server", compatible:10, number:3, version:21},
+    {name:"Abyss web server", category:"web server", compatible:11, number:8, version:22},
 ];
 
 const serverFilters = [
@@ -22,8 +26,8 @@ const serverFilters = [
     "Print servers",
 ];
 
-const Index = () => {
-    return <ServerTable rows={rows} serverFilter={serverFilters}/>;
+const Servers = () => {
+    return <ServerTable originalRows={originalRows} serverFilter={serverFilters}/>;
 };
 
-export default Index;
+export default Servers;

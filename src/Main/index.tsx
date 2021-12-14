@@ -2,10 +2,8 @@ import "./styles";
 import Menu from "./components/Menu";
 import Header from "./components/Header";
 import React, {Children} from "react";
-import ServerTable from "../pages/Servers";
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+import Servers from "../pages/Servers";
+
 import Box from '@mui/material/Box';
 import useStyles from "./styles";
 import {RouteComponentProps, withRouter} from 'react-router-dom';
@@ -37,13 +35,6 @@ const Index = (props: IProps & RouteComponentProps) => {
                         <Container className={classes.containerStyle}>
                             <>{props.children}</>
                         </Container>
-                        <Stack direction="row" className={classes.stackStyle}>
-                            <Button variant="contained" className={classes.buttonStyle}>Create New Server</Button>
-                            <Typography variant="h6" gutterBottom component="div">
-                                List Of Servers
-                            </Typography>
-                        </Stack>
-                        <ServerTable/>
                     </Box>
                 </Box>
             </div>

@@ -48,6 +48,9 @@ export const DefaultTheme = createTheme(
         fontSize: '14px',
         margin: 0,
         direction: 'ltr',
+        '@media (max-width: 820px)': {
+          fontSize: '10px',
+        },
       },
       h1: {
         fontSize: '40px',
@@ -191,6 +194,12 @@ export const DefaultTheme = createTheme(
         },
       },
       MuiTypography: {
+        root: {
+            fontSize: "1.25rem",
+            '@media (max-width: 600px)': {
+              fontSize: ".75rem",
+            },
+        },
         gutterBottom: {
           marginBottom: 0,
         },
@@ -354,6 +363,10 @@ export const DefaultTheme = createTheme(
           '&.MuiTableCell-head': {
             fontWeight: 'bold',
             color: palette.primary.main,
+
+            '@media (max-width: 680px)': {
+              fontSize: '.5rem',
+            },
           },
           '&.MuiTableCell-footer': {
             '& .MuiTablePagination-toolbar': {
@@ -370,11 +383,17 @@ export const DefaultTheme = createTheme(
             },
           },
           '& .MuiSvgIcon-root': {
-            fontSize: '18px',
+            fontSize: '1.25rem',
           },
           '&.MuiTableCell-body': {
             color: palette.primary.main,
-            fontSize: '12px',
+            fontSize: '1rem',
+            '@media (max-width: 680px)': {
+              fontSize: '.75rem',
+            },
+          },
+          '@media (max-width: 680px)': {
+            padding: "6px",
           },
         },
       },
@@ -487,7 +506,7 @@ export const DefaultTheme = createTheme(
       },
       MuiList: {
         root: {
-          maxHeight: '250px',
+          maxHeight: 'fit-content',
           '&.MuiList-padding': {
             paddingRight: '0 !important',
           },
@@ -495,7 +514,7 @@ export const DefaultTheme = createTheme(
       },
       MuiListItem: {
         root: {
-          justifyContent: 'flex-end',
+          justifyContent: 'flex-start',
           '&.Mui-selected': {
             background: palette.background.drawer,
           },
